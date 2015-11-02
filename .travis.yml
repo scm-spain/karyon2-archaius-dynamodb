@@ -21,4 +21,4 @@ before_script:
 - sleep 5 && sh fixtures/populate_config_db.sh
 
 script:
-- ./gradlew '-Darchaius.deployment.environment=travis' check
+- ./gradlew check
