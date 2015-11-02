@@ -2,7 +2,7 @@
 echo "populate config"
 aws_server=
 #comment next line to connect to amazon
-aws_server="--endpoint-url http://192.168.59.103:8666"
+aws_server="--endpoint-url http://localhost:8666"
 
 echo "config"
 
