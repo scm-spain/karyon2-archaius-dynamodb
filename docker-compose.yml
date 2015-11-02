@@ -1,0 +1,5 @@
+dynamo:
+  image: tray/dynamodb-local
+  ports:
+     - "8666:8666"
+  command: -port 8666 -inMemory -sharedDb
