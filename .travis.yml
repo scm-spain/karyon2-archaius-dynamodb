@@ -15,6 +15,7 @@ install:
 
 before_script:
 - java -Djava.library.path=/tmp/dynamodb/DynamoDBLocal_lib -jar /tmp/dynamodb/DynamoDBLocal.jar -port 8666 -inMemory -sharedDb &
+- sleep 5 && sh fixtures/populate_config_db.sh
 
 script:
 - ./gradlew '-Darchaius.deployment.environment=travis' check
