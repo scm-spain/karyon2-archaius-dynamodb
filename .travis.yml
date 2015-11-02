@@ -8,6 +8,7 @@ env:
   - secure: 0yhhXAjdeIQy1P88kBe6l0l96Bo0tdeMsKlmA8nRmbjMZgjSgEoXYCedNqQ562c87hoo3m6zrWYA0jxIzCYCIIYnBtfE994i4hRTmwCEmoYf+2pgT46WF9tZf1ZrXEBsuQGtQY4XzR7Z2nYPw2IPsxrCZs9W2/eRddvT/TlVKXc=
   - AWS_ACCESS_KEY_ID: key_id_local
   - AWS_SECRET_ACCESS_KEY: access_key_local
+  - AWS_DEFAULT_REGION: eu-west-1
 
 install:
 - mkdir /tmp/dynamodb
