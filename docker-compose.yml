@@ -3,3 +3,11 @@ dynamo:
   ports:
      - "8666:8666"
   command: -port 8666 -inMemory -sharedDb
+
+tests:
+  build: .
+  volumes:
+      - .:/app
+  links:
+    - dynamo
+  command: /app/gradlew "-Darchaius.deployment.environment=docker" -b /app/build.gradle clean test
