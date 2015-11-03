@@ -16,8 +16,8 @@ repositories {
     mavenLocal()
     maven {
         credentials {
-            username project.hasProperty('artifactory_scm_user')? artifactory_scm_user: ''
-            password project.hasProperty('artifactory_scm_password')? artifactory_scm_password: ''
+            username project.hasProperty('artifactory_scm_user')? project.artifactory_scm_user: System.getenv()['ARTIFACTORY_SCM_USER']
+            password project.hasProperty('artifactory_scm_password')? project.artifactory_scm_password: System.getenv()['ARTIFACTORY_SCM_PASSWORD']
         }
 
         url "http://artifactory.scmspain.com/artifactory/repo"
@@ -81,8 +81,8 @@ publishing {
     repositories {
         maven {
             credentials {
-                username project.hasProperty('artifactory_scm_user')? artifactory_scm_user: ''
-                password project.hasProperty('artifactory_scm_password')? artifactory_scm_password: ''
+                username project.hasProperty('artifactory_scm_user')? artifactory_scm_user: System.getenv()['ARTIFACTORY_SCM_USER']
+                password project.hasProperty('artifactory_scm_password')? artifactory_scm_password: System.getenv()['ARTIFACTORY_SCM_PASSWORD']
             }
 
             url "http://artifactory.scmspain.com/artifactory/libs-release-ms"

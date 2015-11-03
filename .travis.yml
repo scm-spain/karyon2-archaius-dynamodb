@@ -1,3 +1,24 @@
 language: java
 jdk:
 - oraclejdk8
+
+env:
+  global:
+  - secure: oyEC9zJcK7t6JUUyPs25Wtj36jhxnN6DzGWy7+H8hCC/3Cc77Hi14ifc3fT5ZnYO6R+yIZC//bp/cK/NB60rI4Gu8+GC7wA64TcT7aZOOe1nU5E+CV8pT0aSZMQRmdxcQE16O6lpJndzaZPwMqOSCV0vklVYcFcoaXlyLgxEAQY=
+  - secure: 0yhhXAjdeIQy1P88kBe6l0l96Bo0tdeMsKlmA8nRmbjMZgjSgEoXYCedNqQ562c87hoo3m6zrWYA0jxIzCYCIIYnBtfE994i4hRTmwCEmoYf+2pgT46WF9tZf1ZrXEBsuQGtQY4XzR7Z2nYPw2IPsxrCZs9W2/eRddvT/TlVKXc=
+  - AWS_ACCESS_KEY_ID: key_id_local
+  - AWS_SECRET_ACCESS_KEY: access_key_local
+  - AWS_DEFAULT_REGION: eu-west-1
+
+install:
+- mkdir /tmp/dynamodb
+- wget -O - http://dynamodb-local.s3-website-us-west-2.amazonaws.com/dynamodb_local_latest.tar.gz | tar xz --directory /tmp/dynamodb
+
+before_script:
+- java -Djava.library.path=/tmp/dynamodb/DynamoDBLocal_lib -jar /tmp/dynamodb/DynamoDBLocal.jar -port 8666 -inMemory -sharedDb &
+- pip install --user awscli
+- export PATH=$PATH:$HOME/.local/bin
+- sleep 5 && sh fixtures/populate_config_db.sh
+
+script:
+- ./gradlew check
