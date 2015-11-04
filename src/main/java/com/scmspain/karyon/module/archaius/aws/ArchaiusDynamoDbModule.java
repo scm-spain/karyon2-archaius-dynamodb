@@ -14,9 +14,9 @@ import org.slf4j.LoggerFactory;
 
 /**
  */
-public class ArchaiusAwsModule extends AbstractModule {
+public class ArchaiusDynamoDBModule extends AbstractModule {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(ArchaiusAwsModule.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ArchaiusDynamoDBModule.class);
     private DynamicPropertyFactory properties = DynamicPropertyFactory.getInstance();
 
     public static final String PROPERTY_DYNAMODB_ENDPOINT = "com.netflix.config.dynamo.endpoint";
