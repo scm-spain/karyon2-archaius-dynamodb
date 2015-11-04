@@ -7,7 +7,7 @@ import org.junit.Test;
 
 /**
  */
-public class ArchaiusDynamoDBModuleTempTest extends AbstractControllerTest {
+public class ArchaiusDynamoDBModuleTest extends AbstractControllerTest {
 
     @Test
     public void shouldTakeNewValuesFromDynamoDb() throws Exception {
