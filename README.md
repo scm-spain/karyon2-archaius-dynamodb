@@ -10,7 +10,7 @@ Simply add this module into Modules specification for your AppServer.
 @KaryonBootstrap(name = "AppServer", healthcheck = AlwaysHealthyHealthCheck.class)
 @Modules(include = {
     ...
-    ArchaiusAwsModule.class
+    ArchaiusDynamoDBModule.class
 })
 public interface AppServerForTesting {
     ...
@@ -22,7 +22,7 @@ public interface AppServerForTesting {
 Add dependency as follows:
 
 ```
-    compile 'com.scmspain:ms-module-archaius-aws:0.+'
+    compile 'com.scmspain:ms-module-archaius-dynamodb:0.+'
 ```
 
 ## AppServer.properties
