@@ -26,6 +26,6 @@ abstract public class AbstractControllerTest {
     }
 
     protected HttpClient<ByteBuf, ByteBuf> createHttpClient() {
-        return RxNetty.createHttpClient("localhost", AppServerForTesting.KaryonRestRouterModuleImpl.DEFAULT_PORT);
+        return RxNetty.createHttpClient("localhost", AppServerForTesting.KaryonRxRouterModuleImpl.DEFAULT_PORT);
     }
 }
