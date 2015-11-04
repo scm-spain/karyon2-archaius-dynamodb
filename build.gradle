@@ -29,8 +29,8 @@ repositories {
 dependencies {
     testCompile 'junit:junit:4.11'
     testCompile 'org.mockito:mockito-all:1.9.5'
+    testCompile 'com.netflix.karyon:karyon2-core:2.7.4'
 
-    compile 'com.scmspain.karyon:karyon-rest-router:1.2.+'
     compile 'com.netflix.karyon:karyon2-archaius:2.7.4'
     compile 'com.netflix.archaius:archaius-aws:0.7.1'
     compile 'com.netflix.governator:governator-archaius:1.10.5'
