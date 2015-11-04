@@ -43,7 +43,7 @@ public interface AppServerForTesting {
         private class SimpleRouter implements io.reactivex.netty.protocol.http.server.RequestHandler<ByteBuf, ByteBuf> {
             @Override
             public Observable<Void> handle(HttpServerRequest<ByteBuf> request, HttpServerResponse<ByteBuf> response) {
-                return null;
+                return Observable.empty();
             }
         }
     }
