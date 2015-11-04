@@ -3,7 +3,7 @@ package com.scmspain.karyon.module.archaius.aws.common;
 import com.google.inject.Singleton;
 import com.netflix.config.DynamicPropertyFactory;
 import com.netflix.governator.annotations.Modules;
-import com.scmspain.karyon.module.archaius.aws.ArchaiusDynamoDBModule;
+import com.scmspain.karyon.module.archaius.aws.ArchaiusDynamoDBModuleTemp;
 import netflix.karyon.KaryonBootstrap;
 import netflix.karyon.archaius.ArchaiusBootstrap;
 import netflix.karyon.health.AlwaysHealthyHealthCheck;
@@ -13,7 +13,7 @@ import scmspain.karyon.restrouter.KaryonRestRouterModule;
 @KaryonBootstrap(name = "AppServer", healthcheck = AlwaysHealthyHealthCheck.class)
 @Singleton
 @Modules(include = {
-    ArchaiusDynamoDBModule.class,
+    ArchaiusDynamoDBModuleTemp.class,
     AppServerForTesting.KaryonRestRouterModuleImpl.class
 })
 public interface AppServerForTesting {
