@@ -1,6 +1,6 @@
 # Archaius Aws module for Karyon2
 
-This module for the Netflix framework Karyon helps configuring Archaius to poll from a Dynamodb.
+This module for the Netflix framework Karyon helps configuring Archaius to poll from a DynamoDB.
 
 ## Documentation
 
@@ -17,12 +17,14 @@ public interface AppServerForTesting {
 }
 ```
 
+Please see AppServerForTesting for a functional example.
+
 ## Gradle
 
 Add dependency as follows:
 
 ```
-    compile 'com.scmspain:ms-module-archaius-dynamodb:0.+'
+    compile 'com.scmspain.karyon:karyon2-archaius-dynamodb:0.1.2'
 ```
 
 ## AppServer.properties
