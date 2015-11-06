@@ -24,9 +24,13 @@ public class ArchaiusDynamoDBModule extends AbstractModule {
 
     @Override
     protected void configure() {
-        LOGGER.info("Setting up dynamodb connection");
-        loadDynamoDBConfiguration();
-        LOGGER.info("Finished setting up dynamodb connection");
+        try {
+            LOGGER.info("Setting up dynamodb connection");
+            loadDynamoDBConfiguration();
+            LOGGER.info("Finished setting up dynamodb connection");
+        } catch (RuntimeException e) {
+            LOGGER.error(e.getMessage());
+        }
     }
 
     private void loadDynamoDBConfiguration() {
