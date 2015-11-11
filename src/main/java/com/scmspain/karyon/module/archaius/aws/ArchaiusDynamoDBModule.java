@@ -1,6 +1,7 @@
 package com.scmspain.karyon.module.archaius.aws;
 
 import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSCredentialsProviderChain;
 import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
@@ -42,12 +43,14 @@ public class ArchaiusDynamoDBModule extends AbstractModule {
         AmazonDynamoDB dbClient = buildDynamoDBClient();
         updateRegion(dbClient);
         updateEndpoint(dbClient);
+
         return buildDynamoDBConfiguration(dbClient);
     }
 
     private AmazonDynamoDB buildDynamoDBClient() {
-        AWSCredentials credentials = new DefaultAWSCredentialsProviderChain().getCredentials();
-        return new AmazonDynamoDBClient(credentials);
+        final AWSCredentialsProviderChain awsCredentialsProvider = new DefaultAWSCredentialsProviderChain();
+
+        return new AmazonDynamoDBClient(awsCredentialsProvider);
     }
 
     private void updateRegion(AmazonDynamoDB dbClient) {
@@ -91,6 +94,7 @@ public class ArchaiusDynamoDBModule extends AbstractModule {
     private ConcurrentCompositeConfiguration prepareCompositeConfiguration(DynamicConfiguration dynamicConfig) {
         ConcurrentCompositeConfiguration config = new ConcurrentCompositeConfiguration();
         config.addConfiguration(dynamicConfig, "dynamodb");
+
         return config;
     }
 }
