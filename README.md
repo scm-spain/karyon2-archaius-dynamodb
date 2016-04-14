@@ -24,7 +24,7 @@ Please see AppServerForTesting for a functional example.
 Add dependency as follows:
 
 ```
-    compile 'com.scmspain.karyon:karyon2-archaius-dynamodb:0.1.2'
+    compile 'com.scmspain.karyon:karyon2-archaius-dynamodb:0.1.4'
 ```
 
 ## AppServer.properties
